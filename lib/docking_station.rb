@@ -14,8 +14,12 @@ class DockingStation
     @bikes << bike
   end
 
-  def bikes
-    @bikes
+  def has_bikes?
+    if @bikes.empty?
+      false
+    else
+      true
+    end
   end
 
 end
