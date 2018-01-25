@@ -22,17 +22,12 @@ describe DockingStation do
     expect(docking_station.bikes).to be_empty
   end
 
-  describe "#has_bikes?" do
+  it "docking staion to include bikes" do
     docking_station = DockingStation.new
-    it "returns false if no bike present" do
-      expect(docking_station).not_to have_bikes
-    end
     bike = Bike.new
     docking_station.dock(bike)
-    it "docking staion to include bikes" do
+
       expect(docking_station).to have_bikes
     end
 
   end
-
-end
