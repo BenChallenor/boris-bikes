@@ -22,12 +22,11 @@ describe DockingStation do
     expect(docking_station.bikes).to be_empty
   end
 
-  it "docking staion to include bikes" do
-    docking_station = DockingStation.new
+
+  it "gives an error when dock empty" do
     bike = Bike.new
-    docking_station.dock(bike)
+    @bikes = []
+    expect { subject.release_bike}.to raise_error "No bikes"
 
-      expect(docking_station).to have_bikes
-    end
-
+  end
   end
